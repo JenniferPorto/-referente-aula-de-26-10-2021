@@ -38,56 +38,58 @@ document.write("<br>");
 
 document.write("<table border=3>");
 
-  document.write("<tr>");
-   document.write("<font face=arial size=6 color=" + corFonte + ">");
-   switch (umaData.getDay())
-   {
-     case 0: document.write("<td width=100 align=center bgcolor=#008080> Dom </td>"); break; 
-     case 1: document.write("<td width=100 align=center> Seg </td>"); break; 
-     case 2: document.write("<td width=100 align=center> Ter </td>"); break;
-     case 3: document.write("<td width=100 align=center> Qua </td>"); break;
-     case 4: document.write("<td width=100 align=center> Qui </td>"); break;
-     case 5: document.write("<td width=100 align=center> Sex </td>"); break;
-     case 6: document.write("<td width=100 align=center> Sab </td>"); break;
-   }
-   document.write("</font>");
-   document.write("</td>");
-   document.write("</tr>");
+  diasSemana = Array(7);
+    diasSemana[6]="<td bgcolor = #836FFF width=100 align=center><font face=arial size=6 color = white>Dom";
+    diasSemana[5]="<td width=100 align=center><font face=arial size=6 color = #836FFF>Seg";
+    diasSemana[4]="<td width=100 align=center><font face=arial size=6 color = #836FFF>Ter";
+    diasSemana[3]="<td width=100 align=center><font face=arial size=6 color = #836FFF>Qua";
+    diasSemana[2]="<td width=100 align=center><font face=arial size=6 color = #836FFF>Qui";
+    diasSemana[1]="<td width=100 align=center><font face=arial size=6 color = #836FFF>Sex";
+    diasSemana[0]="<td width=100 align=center><font face=arial size=6 color = #836FFF>Sáb";
  
-
-
+    document.write("<tr>");
+  document.write(diasSemana[6]);
+  document.write(diasSemana[5]);
+  document.write(diasSemana[4]);
+  document.write(diasSemana[3]);
+  document.write(diasSemana[2]);
+  document.write(diasSemana[1]);
+  document.write(diasSemana[0]);
+   document.write("</font>");
+    document.write("</tr>");
 
   for(dd = 2; dd < 33; ++dd)
 {
   if (umaData.getDay()==0)
      {
-      corFundo="#008080";
-      corFonte="white";
+      Fundo="#836FFF";
+      Fonte="white";
       document.write("<tr>");
      }
     else if (umaData.getDay()==7)
     {
-      corFundo="white";
-      corFonte="#008080";
+      Fundo="white";
+      Fonte="#836FFF";
       document.write("</tr><tr>");
     }
    else
      {
-      corFundo="white";
-      corFonte="#008080";
+      Fundo="white";
+      Fonte="#836FFF";
      }
 
-   document.write("<td bgcolor = " + corFundo + " width=100 align=center>");
-   document.write("<font face=arial size=6 color=" + corFonte + ">" + 
+   document.write("<td bgcolor = " + Fundo + " width=100 align=center>");
+   document.write("<font face=arial size=6 color=" + Fonte + ">" + 
                   umaData.getDate() + "</font>");
    document.write("</td>");
 
    umaData.setDate(dd);
-  }
-
-
+   }
+  
 document.write("</table>");
 
 </script>
 </body>
 </html>
+
+
